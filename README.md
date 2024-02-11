@@ -6,6 +6,7 @@ Description: This program creates a linked-list that inserts integer values in a
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Design: There will be 4 files in my program:
+
 1- node.h: define what the node struct is. Each node has two slots, one for the data that it holds and another for the address of the next node in the list
 
 ![image](https://github.com/dudareolon/CS260_Assignment_05_Part2/assets/102680672/7f59fce5-7c85-4e10-ab0d-40eb132595de)
