@@ -4,7 +4,7 @@
 #include <sstream>
 #include <string>
 
-#include "autosort_list.h"
+#include "autosort_linked_list.h"
 #include "node.h"
 
 using std::cout;
@@ -17,31 +17,35 @@ list::list() {
 }
 
 // Insert into list in ascending order
-void list::insert(int data) {
+void list::insert(int value) {
     // create a new node with the given data
     node *new_node = new node;
-    new_node->data = data;
+    new_node->data = value;
     new_node->next = nullptr;
 
     // if head is null, then our list is empty and we need to set that node to head
-    if(head == nullptr) {
+    // also if the head data is bigger or equal to the data we are trying to input, then the new data becomes the head
+    if(head == nullptr || head->data >= value) {
+        new_node -> next = head;
         head = new_node;
     } else {
         // if data is less than head, insert at the beginning of the list
-        if (data < head->data) {
+        if (value < head->data) {
             new_node->next = head;
             head = new_node;
         } else {
             // find the node where node->next->data is greater than new data, so that we can insert after that position
-            node *current = head;
+            node *iteration_pointer = head;
 
-            for (int i = 0; current->next != nullptr && data > current->next->data; i++) {
-                current = current->next;
+            //iteration_plus_one = iteration_pointer -> next; //if the iteration pointer is pointing to the second element on the list, this is the address of the third element
+
+            while (iteration_pointer->next != nullptr && iteration_pointer->next->data < value) {
+                iteration_pointer = iteration_pointer->next;
             }
 
             // insert the new node at the position
-            new_node->next = current->next;
-            current->next = new_node;
+            new_node->next = iteration_pointer->next;
+            iteration_pointer->next = new_node;
         }
     }
 }

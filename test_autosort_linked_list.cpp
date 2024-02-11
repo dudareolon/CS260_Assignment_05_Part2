@@ -2,8 +2,8 @@
 #include <iostream>
 #include <string>
 
-#include "autosort_list.h"
-#include "autosort_list.cpp"
+#include "autosort_linked_list.h"
+#include "autosort_linked_list.cpp"
 
 using std::cout;
 using std::endl;
