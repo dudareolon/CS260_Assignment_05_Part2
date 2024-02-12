@@ -15,11 +15,11 @@ Design: There will be 4 files in my program:
 
 3- autosort_linked_list.cpp: actual code for the behavior of the linked list. This will include 3 functions:
 
-- insert(): insert the integer in the list in an ascending format;
+- insert(int value): insert the integer in the list in an ascending format;
 
-- search(): will search for a specific value in the list. To do binary search you need to be able to randomly access elements on the list, this is not applicable to a linked list, because linked lists do not have an index on their elements, they simply have an address that points to the next node. For this search function I will have to use a more expensive and time consuming method which is to traverse the list from the begining/head of the list until it reaches the value I am searching for or the end of the list. 
+- search(int value): will search for a specific value in the list. To do binary search you need to be able to randomly access elements on the list, this is not applicable to a linked list, because linked lists do not have an index on their elements, they simply have an address that points to the next node. For this search function I will have to use a more expensive and time consuming method which is to traverse the list from the begining/head of the list until it reaches the value I am searching for or the end of the list. 
 
-- toString(): turns the linked list into a string, this does not change the functionability of my code, but it will be extremely necessary for testing purposes. 
+- to_string(): turns the linked list into a string, this does not change the functionability of my code, but it will be extremely necessary for testing purposes. 
 
 4- testing_autosort_linked_list.cpp: this file will run the tests on my program to make sure it is correctly running. The tests I will perform are:
 
