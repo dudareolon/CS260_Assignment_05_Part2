@@ -21,26 +21,29 @@ void list::insert(int value) {
     // create a new node with the given data
     node *new_node = new node;
     new_node->data = value;
-    new_node->next = nullptr;
+    new_node->next = nullptr; //new node needs to point to nullptr otherwise system will give it garbage address
 
     // if head is null, then our list is empty and we need to set that node to head
-    // also if the head data is bigger or equal to the data we are trying to input, then the new data becomes the head
-    if(head == nullptr || head->data >= value) {
-        new_node -> next = head;
-        head = new_node;
+    if(head == nullptr) {
+        head = new_node; 
     } else {
-        // if data is less than head, insert at the beginning of the list
-        if (value < head->data) {
-            new_node->next = head;
-            head = new_node;
+        // if the value we are trying to insert is smaller or equal to the first data in the list
+        if (value <= head->data) {
+            // the new node needs to become the head and be inserted before the first node that is already present
+            new_node -> next = head; //the new node will point to the address stored by the head pointer
+            head = new_node; // then the new node will become the head itself
+            // if we had flipped the order of the 2 lines above it would have not worked because head would have lost the address of the node that was the first one
         } else {
-            // find the node where node->next->data is greater than new data, so that we can insert after that position
-            node *iteration_pointer = head;
 
+            node *iteration_pointer = head; // we will need to iterate through the list until we find the correct location
+
+            // iteration will continue while we don't reach nullptr which is the end of the linked list
+            // and while the value we are trying to insert is bigger than the next data in the list 
             while (iteration_pointer->next != nullptr && iteration_pointer->next->data < value) {
                 iteration_pointer = iteration_pointer->next;
             }
 
+            // at this point the node next to the iteration_pointer is bigger than value, so value needs to be inserted in iteration pointer location
             // insert the new node at the position
             new_node->next = iteration_pointer->next;
             iteration_pointer->next = new_node;
