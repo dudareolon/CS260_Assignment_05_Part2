@@ -102,7 +102,7 @@ int list::search(int value){
         }
         
         // if program got to this lines it means the value was not the data of any of the nodes so it was not on the list or it was an invalid number
-        cout << "The number " << value << " is not in the list or it is not a positive integer" << endl ; 
-        return -1; // I changed from 0 to -1, because 0 could be a value in the list while -1 is not a positive integer therefore is not in the list
+        cout << "The number " << value << " is not in the list" << endl ; 
+        return -1; 
     }
 }

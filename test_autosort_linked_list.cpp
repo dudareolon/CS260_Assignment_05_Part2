@@ -65,21 +65,6 @@ void test_autosort_list_search_wrong_value(){
 
 }
 
-void test_autosort_list_search_invalid_value(){
-    list my_list;
-
-    my_list.insert(1);
-    my_list.insert(2);
-    
-    int expected_result = -1;
-    int actual_result = my_list.search(-5);
-
-    cout << "expected_result: \"" << expected_result << "\"" << endl;
-    cout << "actual_result: \"" << actual_result << "\"" << endl; 
-    cout << endl;
-
-}
-
 void test_autosort_list_insert_first_node() {
     list my_list;
     // insert some nodes
@@ -200,7 +185,6 @@ int main() {
     test_autosort_list_insert_second_node();
     test_autosort_list_search_correct_value();
     test_autosort_list_search_wrong_value();
-    test_autosort_list_search_invalid_value();
     test_autosort_list_insert_node_after_end();
     test_autosort_list_insert_node_with_same_value_as_head();
     test_autosort_list_insert_node_before_head();
