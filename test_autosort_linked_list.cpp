@@ -9,6 +9,17 @@ using std::cout;
 using std::endl;
 using std::string;
 
+void test_autosort_list_search_empty(){
+    list my_list;    
+    int expected_result = 0;
+    int actual_result = my_list.search(3);
+
+    cout << "expected_result: \"" << expected_result << "\"" << endl;
+    cout << "actual_result: \"" << actual_result << "\"" << endl; 
+    cout << endl;
+
+}
+
 void test_autosort_list_constructor() {
     list my_list;
 
@@ -22,6 +33,51 @@ void test_autosort_list_constructor() {
     cout << endl;
 
     assert(expected_result.compare(actual_result) == 0);
+}
+
+void test_autosort_list_search_correct_value(){
+    list my_list;
+
+    my_list.insert(1);
+    my_list.insert(2);
+
+    int expected_result = 2;
+    int actual_result = my_list.search(2);
+
+    cout << "expected_result: \"" << expected_result << "\"" << endl;
+    cout << "actual_result: \"" << actual_result << "\"" << endl; 
+    cout << endl;
+
+}
+
+void test_autosort_list_search_wrong_value(){
+    list my_list;
+
+    my_list.insert(1);
+    my_list.insert(2);
+    
+    int expected_result = 0;
+    int actual_result = my_list.search(3);
+
+    cout << "expected_result: \"" << expected_result << "\"" << endl;
+    cout << "actual_result: \"" << actual_result << "\"" << endl; 
+    cout << endl;
+
+}
+
+void test_autosort_list_search_invalid_value(){
+    list my_list;
+
+    my_list.insert(1);
+    my_list.insert(2);
+    
+    int expected_result = 0;
+    int actual_result = my_list.search(-5);
+
+    cout << "expected_result: \"" << expected_result << "\"" << endl;
+    cout << "actual_result: \"" << actual_result << "\"" << endl; 
+    cout << endl;
+
 }
 
 void test_autosort_list_insert_first_node() {
@@ -58,6 +114,7 @@ void test_autosort_list_insert_second_node() {
 
     assert(expected_result == actual_result);
 }
+
 
 // after end of list
 void test_autosort_list_insert_node_after_end() {
@@ -136,9 +193,14 @@ void test_autosort_list_insert_node_in_middle_of_list() {
 }
 
 int main() {
+
     test_autosort_list_constructor();
+    test_autosort_list_search_empty();
     test_autosort_list_insert_first_node();
     test_autosort_list_insert_second_node();
+    test_autosort_list_search_correct_value();
+    test_autosort_list_search_wrong_value();
+    test_autosort_list_search_invalid_value();
     test_autosort_list_insert_node_after_end();
     test_autosort_list_insert_node_with_same_value_as_head();
     test_autosort_list_insert_node_before_head();

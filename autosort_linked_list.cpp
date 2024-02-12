@@ -88,7 +88,8 @@ int list::search(int value){
 
     // check if the list is empty
     if(head == nullptr){ //if head is the last node of the list, last node points to nullptr
-        cout << "the value you searched is not in the list because it is empty";
+        cout << "the value you searched is not in the list because the list is empty" << endl;
+        return 0;
     } else {
         node *iteration_pointer = head; 
 
@@ -98,7 +99,8 @@ int list::search(int value){
             }
             iteration_pointer = iteration_pointer->next;
         }
-
+        
+        cout << "The number " << value << " is not in the list or it is not a positive integer" << endl ; 
         return 0;
     }
 }
