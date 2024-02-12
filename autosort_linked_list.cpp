@@ -37,8 +37,6 @@ void list::insert(int value) {
             // find the node where node->next->data is greater than new data, so that we can insert after that position
             node *iteration_pointer = head;
 
-            //iteration_plus_one = iteration_pointer -> next; //if the iteration pointer is pointing to the second element on the list, this is the address of the third element
-
             while (iteration_pointer->next != nullptr && iteration_pointer->next->data < value) {
                 iteration_pointer = iteration_pointer->next;
             }
