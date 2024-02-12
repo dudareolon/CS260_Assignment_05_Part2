@@ -50,22 +50,33 @@ void list::insert(int value) {
     }
 }
 
+// this function turns the linked list into a string that includes the data of all the nodes of the list in the sequence they are located in the list
 string list::to_string() {
+
+    // stringstream is a stream class defined in the sstream included on the beginning of this file
+    // strings only store data but with stringstreams the programmer has the ability to manipulate the data in the string
     std::stringstream result_string_stream;
-    if(head == nullptr){
+
+    // check if the list is empty
+    if(head == nullptr){ //if head is the last node of the list, last node points to nullptr
         result_string_stream << "[empty list]";
     } else {
-        node *current = head;
-        result_string_stream << "[";
-        while (current != nullptr) {
-            result_string_stream << current->data;
-            if(current->next != nullptr) {
+        
+        // start the iteration at the head/beginning of the list
+        node *iteration_pointer = head;
+
+        result_string_stream << "["; // springstreams allow you to add different values to the string variable and compose it on multiple code lines
+        while (iteration_pointer != nullptr) { // until it reaches the end of the list
+            result_string_stream << iteration_pointer->data; // more data is added to the string
+            if(iteration_pointer->next != nullptr) { // if iteration reaches end of list then it would not need the comma
                 result_string_stream << ", ";
             }
-            current = current->next;
+            iteration_pointer = iteration_pointer->next; // equivalent to ++i
         }
         result_string_stream << "]";
     }
 
+    // str() is a function of the stringstream class that turns the stringstream into a normal string of the ones we are used to working
+    // C++ is not capable of returning a stringstream
     return result_string_stream.str();
 }
