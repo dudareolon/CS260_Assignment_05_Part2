@@ -34,6 +34,16 @@ Design: There will be 4 files in my program:
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Requirements:
+1- automatically inserts values in the correct position based on some order of sorting (perhaps ascending integers or lexicographical sorting of words):
+
+![image](https://github.com/dudareolon/CS260_Assignment_05_Part2/assets/102680672/47ab637c-b3ba-469b-bb9c-349540f2cbf6)
+
+
+
+2- efficiently searches for elements (likely binary search for the array list, but what about the linked-list?):
+
+![image](https://github.com/dudareolon/CS260_Assignment_05_Part2/assets/102680672/2372195b-6400-4f06-b56a-5427abb2fd4e)
+
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
