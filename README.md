@@ -49,3 +49,18 @@ Requirements:
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Complexity Analysis:
+
+Insert function:
+  The part of the code where a new node is created is a constant time operation and can be considered a O(1).
+  The part of the code that traverses through the list to find the correct position to insert the new node, in the best case scenario is a O(1) since it would only run once, but in the worst case scenario (which is the one I am considering that will most likely happen) is that the iteration will happen for the entire linked list and that would fit into the O(n) notation.
+
+Search function:
+  The search function also does the same as the insert function in which it traverses the entire linked list. By traversing I mean that it goes node by node of the linked list looking for a value. If we are searchign for the first value of the list than the complexity would simply be O(1) since it would run the iteration only once. However, that is not the case most of the times, so like on the previous function I will consider the worst case scenario which is to iterate the entire list and that would be an O(n) complexity. 
+
+
+Here is a chart to make it clearer: 
+
+![image](https://github.com/dudareolon/CS260_Assignment_05_Part2/assets/102680672/9f6da01f-85db-4cb2-b5c3-6d7e53a20e24)
+
+
+
