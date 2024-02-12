@@ -89,18 +89,19 @@ int list::search(int value){
     // check if the list is empty
     if(head == nullptr){ //if head is the last node of the list, last node points to nullptr
         cout << "the value you searched is not in the list because the list is empty" << endl;
-        return 0;
+        return -1;
     } else {
         node *iteration_pointer = head; 
 
-        while (iteration_pointer != nullptr) {
+        while (iteration_pointer != nullptr) { // runs the iteration until nullptr is pointing to nullptr, in other words until it passes the last node
             if (iteration_pointer->data == value){
-                return value;
+                return value; // exit the function with the value
             }
             iteration_pointer = iteration_pointer->next;
         }
         
+        // if program got to this lines it means the value was not the data of any of the nodes so it was not on the list or it was an invalid number
         cout << "The number " << value << " is not in the list or it is not a positive integer" << endl ; 
-        return 0;
+        return -1; // I changed from 0 to -1, because 0 could be a value in the list while -1 is not a positive integer therefore is not in the list
     }
 }

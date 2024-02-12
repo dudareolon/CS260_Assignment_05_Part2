@@ -11,7 +11,7 @@ using std::string;
 
 void test_autosort_list_search_empty(){
     list my_list;    
-    int expected_result = 0;
+    int expected_result = -1;
     int actual_result = my_list.search(3);
 
     cout << "expected_result: \"" << expected_result << "\"" << endl;
@@ -56,7 +56,7 @@ void test_autosort_list_search_wrong_value(){
     my_list.insert(1);
     my_list.insert(2);
     
-    int expected_result = 0;
+    int expected_result = -1;
     int actual_result = my_list.search(3);
 
     cout << "expected_result: \"" << expected_result << "\"" << endl;
@@ -71,7 +71,7 @@ void test_autosort_list_search_invalid_value(){
     my_list.insert(1);
     my_list.insert(2);
     
-    int expected_result = 0;
+    int expected_result = -1;
     int actual_result = my_list.search(-5);
 
     cout << "expected_result: \"" << expected_result << "\"" << endl;
