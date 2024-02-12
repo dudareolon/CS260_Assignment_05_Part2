@@ -11,6 +11,7 @@ class list {
 
     public:
         list();
-        void insert(int data);
+        void insert(int value);
         std::string to_string();
+        int search(int value);
 };

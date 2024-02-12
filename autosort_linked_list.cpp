@@ -16,7 +16,7 @@ list::list() {
     head = nullptr;
 }
 
-// Insert into list in ascending order
+// this function inserts the value in the linked list in ascending value
 void list::insert(int value) {
     // create a new node with the given data
     node *new_node = new node;
@@ -79,4 +79,26 @@ string list::to_string() {
     // str() is a function of the stringstream class that turns the stringstream into a normal string of the ones we are used to working
     // C++ is not capable of returning a stringstream
     return result_string_stream.str();
+}
+
+
+// this function searches for a specific value in the list
+// you can't do binary search with linked lists so I had to a more costly option which is to traverse the entire list in the search of the value
+int list::search(int value){
+
+    // check if the list is empty
+    if(head == nullptr){ //if head is the last node of the list, last node points to nullptr
+        cout << "the value you searched is not in the list because it is empty";
+    } else {
+        node *iteration_pointer = head; 
+
+        while (iteration_pointer != nullptr) {
+            if (iteration_pointer->data == value){
+                return value;
+            }
+            iteration_pointer = iteration_pointer->next;
+        }
+
+        return 0;
+    }
 }
